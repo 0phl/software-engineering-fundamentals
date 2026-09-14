@@ -1,0 +1,27 @@
+{
+  "name": "software-engineering-fundamentals",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A mastery-based software engineering curriculum built through TypeScript, Node.js, PostgreSQL, React, and DevOps labs.",
+  "engines": {
+    "node": ">=22"
+  },
+  "workspaces": [
+    "labs/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "check": "npm run format:check && npm run typecheck && npm test && npm run build",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lab:01": "npm run start --workspace @fundamentals/01-typescript-cli",
+    "test": "npm run test --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.2",
+    "prettier": "^3.9.6",
+    "tsx": "^4.23.13",
+    "typescript": "^7.0.2"
+  }
+}
